@@ -1,0 +1,15 @@
+URxvt.font: -*-terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
+
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+
+URxvt*foreground: gray
+URxvt*scrollBar: false
+URxvt.font: xft:Terminus:pixelsize=10,xft:Fixed:pixelsize=10
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: opera
+URxvt.matcher.button: 1
+URxvt.colorUL: #86a2be
+URxvt.geometry: 140x40+100+50
+URxvt.transparent: true
+URxvt.shading: 40
+URxvt.searchable-scrollback: CM-s
