@@ -32,6 +32,9 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'Shougo/unite.vim'
 Plug 'rgrinberg/vim-ocaml'
+Plug 'spolu/dwm.vim'
+Plug 'tpope/vim-characterize'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -103,6 +106,8 @@ set expandtab
 set autoindent
 set smartindent
 
+set autowrite
+
 set wildignore=*.class,*.pyc,*.o,*.cmo,*.cmi,*.cmx,*.cmti,*.cmt
 autocmd QuickFixCmdPost [^l]* nested copen
 autocmd QuickFixCmdPost [^l]* nested cwindow
@@ -117,7 +122,7 @@ nmap <leader>T :enew<cr>
 nmap <leader>l :bnext<CR>
 
 " Move to the previous buffer
-nmap <leader>h :bprevious<CR>
+nmap <leader>k :bprevious<CR>
 
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
@@ -126,4 +131,16 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
-:map <Leader>m :Neomake!<CR>
+
+tnoremap <Esc> <C-\><C-n>
+
+nmap <Leader>m :Neomake!<CR>
+let g:neomake_make_modified=1
+autocmd! BufWritePost * Neomake
+
+"let g:neomake_tex_mex_maker = {
+            "\ 'exe': 'pdflatex',
+            "\ 'args': ['-file-line-error', '-interaction=nonstopmode'],
+            "\ 'errorformat': '%f:%l:\ %m',
+            "\ }
+set clipboard+=unnamedplus
